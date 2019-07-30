@@ -7,7 +7,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriver; 
 
 public class Demo12 {
 
@@ -44,6 +44,15 @@ public class Demo12 {
 		}
 		driver.switchTo().window(parentwindow);
 		driver.navigate().to("http://newtours.demoaut.com/");
+		System.out.println(driver.getTitle());
+		driver.close();
+		driver.switchTo().window(lastwindow);
+		driver.navigate().to("http://newtours.demoaut.com/");
+		System.out.println(driver.getTitle());
+		driver.quit();
+		
+		
+		
 
 
 	}
