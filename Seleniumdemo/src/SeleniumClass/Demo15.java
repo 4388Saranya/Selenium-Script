@@ -37,8 +37,13 @@ public class Demo15 {
 	}
 		
 		driver.switchTo().frame("iframe2");// this is to switch one frame to other frame
-		driver.findElement(By.linkText("Sortable")).click();// clicked on Sortable on the switched frame. once the action in other frame is done
+		//driver.findElement(By.linkText("Sortable")).click();// clicked on Sortable on the switched frame. once the action in other frame is done
 		//should write the below one to come out of the frame and to default one
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame("iframe1");
+		Thread.sleep(3000);
+		String text=driver.findElement(By.xpath("//*[@id='primary-menu']/li[1]/a/span/span")).getText();
+		System.out.println(text);
 		driver.switchTo().defaultContent();
 		
 	
